@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url(bg.jpeg) no-repeat center top;
+  background-size: cover;
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+.login-box {
+  width: 320px;
+  height: 420px;
+  background: rgba(0, 80, 120,.7);
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  box-shadow: 0 5px 40px rgba(0, 0, 0,.5);
+  border-radius: 20px;
+}
+
+.login-box .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
+}
+
+.login-box h1 {
+  margin: 0 0 40px;
+  padding: 0;
+  text-align: center;
+  font-size: 22px;
+}
+
+.login-box label {
+  font-weight: bold;
+  display: block;
+	
+}
+
+.login-box input {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.login-box .inputClass{
+	position:relative;
+}
+.login-box .inputClass input {
+
+	width:100%
+	padding: 10px 0;
+	padding-bottom: 12px;
+	font-size: 16px;
+	color: #fff;
+	margin-bottom: 40px;
+	border: none;
+	border-bottom: 1px dashed  #fff;
+	outline:none;
+	background:transparent;	
+}
+.login-box .inputClass label {
+	left:0;
+	top:0;
+	position:absolute;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	pointer-events:none;
+	transition: .5s;
+}
+.login-box .inputClass input:focus ~ label,
+.login-box .inputClass input:valid ~label
+{
+	top: -25px;
+	left: 0;
+	color: rgba(230, 200, 119,.8);
+	font-size: 12px;
+	
+}
+.login-box input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: rgba(230, 200, 119,.8);
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+.login-box input[type="submit"]:hover {
+  cursor: pointer;
+  background: rgba(240, 240, 0,.7);
+  color: #000;
+}
+
+.login-box a {
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 20px;
+  color: darkgrey;
+}
+
+.login-box a:hover {
+  color: #fff;
+}
