@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>arsw.brainandboom</groupId>
-	<artifactId>bandb</artifactId>
+	<groupId>fuse.appweb.shop</groupId>
+	<artifactId>ShopApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>bandb</name>
-	<description>Juego Brain and Boom (B-B)</description>
+	<name>Shop</name>
+	<description>Fuse Web APP</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

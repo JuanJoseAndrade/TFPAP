@@ -1,12 +1,12 @@
-package arsw.brainandboom.bandb;
+package fuse.appweb.shop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BandbApplication {
+public class ShopApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BandbApplication.class, args);
+		SpringApplication.run(ShopApp.class, args);
 	}
 }
