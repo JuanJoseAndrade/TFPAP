@@ -24,8 +24,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping(value = "/shopapi") 
-public class ShopController { 
+@RequestMapping(value = "/shopapi")
+public class ShopController {
     @Autowired
     @Qualifier("Basic")
     OrderServices services;
@@ -35,12 +35,12 @@ public class ShopController {
             if(restaurantorderservices.getTableOrder(id)!=null){
                 return new ResponseEntity<>(restaurantorderservices.getTableOrder(id),HttpStatus.ACCEPTED);
             }
-            else{	
+            else{
                 return new ResponseEntity<>("Error 404, esa orden no existe en el sistema",HttpStatus.NOT_FOUND);
             }
 
         }
-    @GetMapping("/{id}/total")    
+    @GetMapping("/{id}/total")
         public ResponseEntity<?> getOrderTotal(@PathVariable int id) {
             try {
                 return new ResponseEntity<>(restaurantorderservices.calculateTableBill(id),HttpStatus.ACCEPTED);
@@ -50,7 +50,7 @@ public class ShopController {
             }
         }
 */
-//GET PRODUCT -----------------------------------------------------------------------------  
+//GET PRODUCT -----------------------------------------------------------------------------
     @RequestMapping(method = RequestMethod.GET , value = "/products")
     public ResponseEntity<?> GetProducts(){
 
@@ -60,7 +60,7 @@ public class ShopController {
             } catch (Exception ex) {
 
                     return new ResponseEntity<>("Error 404"+ex,HttpStatus.NOT_FOUND);
-            }  
+            }
     }
     @RequestMapping(method = RequestMethod.GET , value = "/sortproducts")
     public ResponseEntity<?> GetSortProducts(){
@@ -72,7 +72,7 @@ public class ShopController {
             } catch (Exception ex) {
 
                     return new ResponseEntity<>("Error 404"+ex,HttpStatus.NOT_FOUND);
-            }  
+            }
     }
     @RequestMapping(method = RequestMethod.GET , value = "/searchproducts/{search}")
     public ResponseEntity<?> GetSearchProducts(@PathVariable String search){
@@ -83,9 +83,9 @@ public class ShopController {
             } catch (Exception ex) {
 
                     return new ResponseEntity<>("Error 404"+ex,HttpStatus.NOT_FOUND);
-            }  
+            }
     }
-    
+
     @RequestMapping(method = RequestMethod.GET , value = "/products/{product}")
     public ResponseEntity<?> GetProduct(@PathVariable String product){
 
@@ -95,7 +95,7 @@ public class ShopController {
             } catch (Exception ex) {
 
                     return new ResponseEntity<>("Error 404"+ex,HttpStatus.NOT_FOUND);
-            }  
+            }
     }
     //GET USER
     @RequestMapping(method = RequestMethod.GET , value = "/active")
@@ -108,7 +108,7 @@ public class ShopController {
             } catch (Exception ex) {
 
                     return new ResponseEntity<>("Error 404"+ex,HttpStatus.NOT_FOUND);
-            }  
+            }
     }
     //Get Value
         @RequestMapping(method = RequestMethod.GET , value = "/factura/{mail}")
@@ -119,35 +119,35 @@ public class ShopController {
             } catch (Exception ex) {
 
                     return new ResponseEntity<>("Error 404"+ex,HttpStatus.NOT_FOUND);
-            }  
+            }
     }
-    
-    /*
-    @RequestMapping(method = RequestMethod.POST)	
-    public ResponseEntity<?> manejadorPostRecursoXX(@RequestBody Order newOrder){
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/products")
+    public ResponseEntity<?> manejadorPostRecursoXX(@RequestBody Product newProduct){
             try {
-                    restaurantorderservices.addNewOrderToTable(newOrder);
+                    services.addProduct(newProduct);
                     return new ResponseEntity<>(HttpStatus.CREATED);
             } catch (Exception ex) {
                     Logger.getLogger(OrdersAPIController.class.getName()).log(Level.SEVERE, null, ex);
-                    return new ResponseEntity<>("Error al intentar subir la orden",HttpStatus.FORBIDDEN);            
-            }        
+                    return new ResponseEntity<>(ex,HttpStatus.FORBIDDEN);
+            }
 
     }
     //Se ingresa una orden con el identificador de la mesa a la que se le quieren agregar cosas y los productos
     //Ejemplo de como usar Put con Json : Dentro van los nuevos productos que se quieran agregar{"orderAmountsMap":{"PIZZA":5},"tableNumber":1}
     //http://localhost:8080/orders Este es el path para modificar determinados datos sea la mesa que sea
     // Ejemplo para modificar orden: curl -i -X PUT -HContent-Type:application/json -HAccept:application/json http://localhost:8080/orders -d '{"orderAmountsMap":{"PIZZA":3,"HOTDOG":1,"COKE":4,"HAMBURGER":4},"tableNumber":1}'
-
-    @RequestMapping(method = RequestMethod.PUT)	
+      /*
+    @RequestMapping(method = RequestMethod.PUT)
     public ResponseEntity<?> manejadorPutxOrder(@RequestBody  Order newOrder){
-            try {   
+            try {
                     restaurantorderservices.addOrderToOrder(newOrder);
                     return new ResponseEntity<>(HttpStatus.ACCEPTED);
             } catch (Exception ex) {
                     Logger.getLogger(OrdersAPIController.class.getName()).log(Level.SEVERE, null, ex);
-                    return new ResponseEntity<>("No se pudo hacer el proceso Put de los productos",HttpStatus.FORBIDDEN);            
-            }        
+                    return new ResponseEntity<>("No se pudo hacer el proceso Put de los productos",HttpStatus.FORBIDDEN);
+            }
 
     }
 
@@ -158,19 +158,19 @@ public class ShopController {
                     return new ResponseEntity<>(HttpStatus.ACCEPTED);
             } catch (Exception ex) {
                     Logger.getLogger(OrdersAPIController.class.getName()).log(Level.SEVERE, null, ex);
-                    return new ResponseEntity<>("Mesa inexistente o ya liberada, No se pudo eliminar el elemento",HttpStatus.FORBIDDEN);            
-            }        
+                    return new ResponseEntity<>("Mesa inexistente o ya liberada, No se pudo eliminar el elemento",HttpStatus.FORBIDDEN);
+            }
 
     }
-    @RequestMapping(method = RequestMethod.DELETE)	
+    @RequestMapping(method = RequestMethod.DELETE)
     public ResponseEntity<?> manejadorDeleteProduct(@RequestBody Order order){
             try {
                     restaurantorderservices.deleteOrderFromOrder(order);
                     return new ResponseEntity<>(HttpStatus.ACCEPTED);
             } catch (Exception ex) {
                     Logger.getLogger(OrdersAPIController.class.getName()).log(Level.SEVERE, null, ex);
-                    return new ResponseEntity<>("El producto o la orden no existe",HttpStatus.FORBIDDEN);            
-            }        
+                    return new ResponseEntity<>("El producto o la orden no existe",HttpStatus.FORBIDDEN);
+            }
     }
     */
 
